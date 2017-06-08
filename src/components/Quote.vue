@@ -33,7 +33,6 @@ export default {
     return {
       quoteText: "",
       quoteAuthor: "",
-      quoteAuthorWiki: "",
       isLoading: true,
       shareURI: ""
     }
@@ -43,16 +42,19 @@ export default {
       this.isLoading = false;
       let reqConfig = {
         method: 'get',
-        url: 'http://www.quotzzy.co/api/quote/',
-        responseType: 'json'
+        url: 'https://andruxnet-random-famous-quotes.p.mashape.com/?count=1',
+        responseType: 'json',
+        headers: {
+          'X-Mashape-Key': 'rOndnsPdyfmshTaaffz3htkFaLCAp1Cbs23jsnO4hC4WfDmOPc',
+          'Accept': 'application/json'
+        }
       }
 
       axios(reqConfig).then(res => {
-        let tweet = `"${res.data.text}" - ${res.data.author.name}`
+        let tweet = `"${res.data.quote}" - ${res.data.author}`
         this.shareURI = encodeURI(`https://twitter.com/intent/tweet?text=${tweet}`)
-        this.quoteText = res.data.text
-        this.quoteAuthor = res.data.author.name
-        this.quoteAuthorWiki = res.data.author.wiki
+        this.quoteText = res.data.quote
+        this.quoteAuthor = res.data.author
         this.isLoading = true;
         this.$emit('changeColor')
       })
@@ -72,7 +74,6 @@ div{
   padding: 100px 50px 0 50px;
   width: auto;
   font-size: 2em;
-  /*text-align: justify;*/
 }
 
 .button {

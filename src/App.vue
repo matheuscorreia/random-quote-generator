@@ -2,7 +2,7 @@
   <div id="app" v-bind:style="{'background-color':`rgba(${color.r}, ${color.g}, ${color.b}, ${color.a})`}">
     <div class="header">
       <span class="header__text">random</span>
-      <img src="src/assets/icons/feather.svg" class="header__icon" />
+      <img src="/static/icons/feather.svg" class="header__icon" />
       <span class="header__text">quote</span>
     </div>
     <quote v-on:changeColor="randomColor"></quote>
@@ -36,7 +36,6 @@ export default {
       this.color.r = randomBetween(0,255);
       this.color.g = randomBetween(0,255);
       this.color.b = randomBetween(0,255);
-      console.log(this.color);
     }
   }
 }
@@ -53,7 +52,7 @@ html, body {
   height: 100%;
 }
 html {
-  background: url('assets/img/bg.png');
+  background: url('/static/img/bg.png');
   background-repeat: repeat;
   font-family: 'Raleway';
 }

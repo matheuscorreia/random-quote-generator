@@ -10,10 +10,10 @@
     </div>
     <div class="quote__buttons">
       <button class="button" v-on:click="getQuote">
-        <img class="quote__icon" src="/static/icons/rotate-cw.svg" />
+        <img class="quote__icon" src="static/icons/rotate-cw.svg" />
       </button>
       <a class="button" v-bind:href="shareURI" target="_blank">
-        <img class="quote__icon" src="/static/icons/twitter.svg" />
+        <img class="quote__icon" src="static/icons/twitter.svg" />
       </a>
     </div>
   </div>

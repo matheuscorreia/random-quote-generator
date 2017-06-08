@@ -2,7 +2,7 @@
   <div id="app" v-bind:style="{'background-color':`rgba(${color.r}, ${color.g}, ${color.b}, ${color.a})`}">
     <div class="header">
       <span class="header__text">random</span>
-      <img src="/static/icons/feather.svg" class="header__icon" />
+      <img src="static/icons/feather.svg" class="header__icon" />
       <span class="header__text">quote</span>
     </div>
     <quote v-on:changeColor="randomColor"></quote>
